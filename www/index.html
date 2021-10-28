@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Mini Conference</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+        <link rel="stylesheet" href="plugin/highlight/monokai.css">
+        
+        <link rel="stylesheet" href="style.css">
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <section data-auto-animate>
+                    <span class="menu-title" style="display: none">Overview</span>
+                    <h3 class="r-fit-text">Adversarial Attacks against Deep Learning</h3>
+                        <p class="name" data-fragment-index="1" style="color: blue;"> Research Question: Is Deep Learning secure for Robots?</p>
+                        <div class="r-vstack">
+                            <ul class="agenda">
+                                <li class="fragment" data-fragment-index="1">Real-time White-box Attack (20ms)</li>
+                                <ul class="fragment">
+                                    <li>Project 1: Adversarial Filter</li>
+                                    <li>Project 2: Adversarial Detection</li>
+                                </ul>
+                                <br />
+                                <li class="fragment" data-fragment-index="2">Distributed Black-box Attack (20s)</li>
+                                <ul class="fragment">
+                                    <li>Project 3: Adversarial Classification</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    <div>
+                        <!-- <img src="images/wuhanstudio.jpg" class="wuhanstudio"> -->
+                        <p class="name">Han Wu &nbsp;<i class="fab fa-github"></i>&nbsp; <a href="https://github.com/wuhanstudio/">@wuhanstudio</a></p>
+                        <p class="name">Exeter Trustworthy AI Lab</p>
+                    </div>
+                    
+                    <aside class="notes">
+                        Hi, I would like to introduce adversarial attacks against deep learning. Basically, I'm trying to seek the answer for the question: Is Deep Learning secure for Robots? To answer the question, I would like to present real-time White-box attack and distributed Black-box attack. White-box attack means we know all the details about the model, including the input, the output, the structure of the model, virtually eveything. While for black-box attack, we only know the input and output, and nothing else. For White-box attack, I prepared two projects, adversarial filter and adversarial detection that attack object detection system in real time. For black-box attack, I prepared one project, adversarial classification that attacks image classification system.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Background</h2>
+                    <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Is Deep Learning secure for Robots?</p>
+                     <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <p class="" style="font-size: 35px;">Intelligent Robots: Deep Learning in Robotics</p>
+                    <img src="images/amazon_alibaba.png" style="width: 65%;" alt="">
+                    <div class="fragment r-vstack">
+                        <img src="images/autonomous.png" style="width: 65%;" alt="">
+                        <span class="" style="font-size: 28px;">Deep Learning for Autonomous Driving</span>
+                    </div>
+                    <aside class="notes">
+                        In recent years, we see quite a lot of deep learning applications in robotics, such as autonomous driving. But here's the problem, what if deep learning models are vulnerable to adversarial attacks, which means deep neural networks can make wrong or even ridiculous predictions once under attack.
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="images/fgsm.png" alt="" />
+                    <p class="" style="font-size: 28px;">Adversarial attacks against image classification</p>
+                    <div class="fragment r-vstack">
+                        <img src="images/detection.png" alt="">
+                        <span class="" style="font-size: 28px;">Adversarial attacks against object detection  &nbsp; <a href="https://arxiv.org/abs/1906.11897"><i class="far fa-file-pdf"></i></a></span>
+                    </div>
+                    <aside class="notes">
+                        For example, on the left side, we have a pig, and it's detected as a pig. But if we add some perturbations to the image. On the right side, it's still a pig. But deep learning models recognize it as airliner. Similarly, we can attack object detection system by adding some perturbations to the image. This is how we attacks deep learning models, now let's take a look at some real time white-box attacks.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Project 1: Adversarial Filter &nbsp; <a href="https://github.com/wuhanstudio/adversarial-detection"><i class="fab fa-github"></i></a></h2>
+                    <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Real-time White-box Attack</p>
+                    <aside class="notes">
+                        Adversarial Filter. We can attack the object detection system by hacking into the camera.
+                    </aside>
+                </section>
+
+                <section data-background-video="images/fake_camera.mp4" 
+                data-background-video-loop data-background-video-muted>
+                    <aside class="notes">
+                        This kind of attack applies the perturbation to the whole image. It's also possible to apply the perturbation to a specific region of the image.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2 class="r-fit-text">Project 2: Adversarial Detection &nbsp; <a href="https://github.com/wuhanstudio/adversarial-ros-detection"><i class="fab fa-github"></i></a></h2>
+                    <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Real-time White-box Attack</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section data-background-video="images/detection.mp4" 
+                data-background-video-loop data-background-video-muted>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section data-background-video="images/detection_tb3.mp4" 
+                data-background-video-loop data-background-video-muted>
+                    <aside class="notes">
+                        The same attack can be applied to a real robot as well.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2 class="r-fit-text">Project 3: Adversarial Classification &nbsp; <a href="https://github.com/wuhanstudio/blackbox-adversarial-toolbox"><i class="fab fa-github"></i></a></h2>
+                    <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Distributed Black-box Attack</p>
+                    <aside class="notes">
+                        These are white-box attacks that can attack object detection system in real-time. They are fast because we know all the details of the deep learning model. If we have no access to the structure of the model, we can still attack image classification systems using black-box attack.
+                    </aside>
+                </section>
+
+                <section data-background-video="images/classification.mp4" 
+                data-background-video-loop data-background-video-muted>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2 class="r-fit-text">Is Deep Learning secure for Robots?</h2>
+                    <div class="r-vstack">
+                        <div class="r-hstack">
+                            <img src="images/filter.jpg" alt="" srcset="" width="50%"> &nbsp;&nbsp;
+                                <img src="images/classification.png" alt="" srcset="" width="65%">
+                        </div>
+                    </div>
+                    <div class="r-vstack">
+                        <div class="r-hstack">
+                            <img src="images/one_target.jpg" alt="" srcset=""> &nbsp;&nbsp;
+                            <img src="images/multi_target.jpg" alt="" srcset=""> &nbsp;&nbsp;
+                            <img src="images/multi_untarget.jpg" alt="" srcset="">
+                        </div>
+                    </div>
+                    <aside class="notes">
+                        So now, if I ask the same question, is deep learning secure for robots? Well, perhaps not.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Thanks</h2>
+                    <div class="r-vstack">
+                        <p><a href="https://mini.wuhanstudio.uk/">https://mini.wuhanstudio.uk</a></p>
+                    </div>
+                    <aside class="notes">
+                        This is the end of my presentation. All the slides are available on the website. Actually, the presentation itself uses the website. Thank you.
+                    </aside>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/menu/menu.js"></script>
+        <script src="plugin/math/math.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script>
+            Reveal.initialize({
+                center: true,
+                hash: true,
+                plugins: [ RevealHighlight, RevealMath, RevealMenu ],
+                mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+                config: 'TeX-AMS_HTML-full',
+                // pass other options into `MathJax.Hub.Config()`
+                TeX: { Macros: { RR: "{\\bf R}" } },
+                menu: {
+                    hideMissingTitles: true,
+                },
+                // showNotes: true,
+            });
+        </script>
+    </body>
+</html>
